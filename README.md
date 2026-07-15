@@ -93,21 +93,22 @@ The sticky nav mirrors this exactly, and the currently visible section is highli
 ### Part 2: Design — Questions & Answers
 
 **1. What overall style will best represent you?**
-Professional — clean, light, editorial, with an engineering personality (monospace accents, terminal-style benchmark readouts) rather than decoration.
+Professional with a strong engineering identity — a dark, card-driven "ops dashboard" look with monospace accents and terminal-style readouts, so the site reads as a developer portfolio at first glance.
 
 **2. What color scheme will you use and why?**
-A "cluster health" palette borrowed from infrastructure dashboards, since my featured work is cluster deployment and failover testing:
+A dark "ops dashboard" palette, since my featured work is cluster deployment and failover testing — this is literally how infrastructure monitoring tools look:
 
 | Token | Hex | Role |
 |---|---|---|
-| Paper | `#F7F8F5` | Page background |
-| Panel | `#EDF1EC` | Tinted alternate sections |
-| Ink | `#15211B` | Text, dark panels |
-| Slate | `#48584E` | Secondary text |
-| Pine | `#0E5C48` | Primary accent — "healthy node" green |
-| Amber | `#B26E05` | Failover/warning accent, used sparingly |
+| Background | `#0C1310` | Page background (dark spruce console) |
+| Panel | `#101B15` | Tinted alternate sections |
+| Card | `#14211A` | Cards and containers |
+| Text | `#E7EFE9` | Primary text |
+| Muted | `#A3B7AA` | Secondary text |
+| Mint | `#4CC38A` | Primary accent — "healthy node" green |
+| Amber | `#E0A33E` | Failover/warning accent, used sparingly |
 
-Green = healthy, amber = failover is exactly how monitoring dashboards speak, so the palette encodes the subject of my work. All text/background pairs meet WCAG AA contrast (pine on paper ≈ 6.7:1, ink on paper ≈ 15:1).
+Green = healthy, amber = failover is exactly how monitoring dashboards speak, so the palette encodes the subject of my work. All text/background pairs meet WCAG AA contrast (text on background ≈ 15:1, mint on background ≈ 8:1).
 
 **3. What fonts will you use for headings and body text?**
 - **Headings:** Bricolage Grotesque — characterful, modern, still professional.
@@ -116,10 +117,10 @@ Green = healthy, amber = failover is exactly how monitoring dashboards speak, so
 All loaded from Google Fonts with `display=swap`.
 
 **4. How will your design reflect your personality or field?**
-The signature element is an **interactive 6-node Redis cluster diagram** in the hero — 3 masters, 3 replicas, ambient "gossip" pulses — with a button that kills a master and animates the replica's promotion. It's a working metaphor for my actual featured project. Monospace `// section` eyebrows, timeline "node" markers, and a terminal-style benchmark panel carry the same engineering voice through the whole page.
+The signature element is an **interactive 6-node Redis cluster diagram** in the hero — 3 masters, 3 replicas, ambient "gossip" pulses — with a button that kills a master and animates the replica's promotion. It's a working metaphor for my actual featured project. Monospace `// section` eyebrows, a blinking terminal cursor after my name, glowing timeline "node" markers, a faint blueprint grid behind the hero, and a terminal-style benchmark panel carry the same engineering voice through the whole page.
 
 **5. What layout will your homepage follow?**
-A two-column hero (identity + CTAs on the left, cluster diagram on the right) followed by full-width stacked sections alternating between paper and tinted backgrounds, all constrained to a 1080px content column.
+A two-column hero (oversized name + role + CTAs on the left, cluster diagram card on the right) over a faint blueprint grid, followed by full-width stacked sections alternating between the base and tinted dark backgrounds, all constrained to a 1080px content column.
 
 **6. How will you organize project sections visually?**
 The Redis project is a **featured case study**: a 2-column card with the narrative on the left and a dark terminal-style benchmark readout (throughput, latency, P95/P99, total ops) on the right, outlined in the accent color. The other two cloud projects follow as full-width cards with a consistent structure: title → stack/date line in mono → description → repo link.
@@ -128,10 +129,10 @@ The Redis project is a **featured case study**: a 2-column card with the narrati
 Yes. A fluid 1080px max-width layout, `clamp()`-based type scaling, and CSS Grid columns that collapse to a single column at 860px and 700px breakpoints. On small screens the nav becomes a hamburger menu (animated to an ✕, with correct `aria-expanded` state). Tested at 360px, 768px, and 1280px widths.
 
 **8. What visual hierarchy will guide visitors?**
-Name and role dominate the first screen (clamp up to 4rem display type); section titles are large display serifs preceded by small mono eyebrows; metrics are set in accent-colored mono so numbers pop out of body text; primary CTAs are solid pine pills while secondary actions are ghost buttons.
+Name dominates the first screen (uppercase display type up to 5.5rem) with the role line directly beneath; short section titles are preceded by small mono eyebrows; metrics are set in bright mint mono so numbers pop out of body text; primary CTAs are solid mint buttons while secondary actions are ghost buttons; cards brighten their borders on hover to signal interactivity.
 
 **9. How will consistency be maintained across pages/sections?**
-A single design-token system (`:root` CSS variables for color, type, radius, max-width) drives everything. Every section uses the same eyebrow → title → content pattern, the same card and chip components, and the same button styles. One stylesheet, no per-section overrides.
+A single design-token system (`:root` CSS variables for color, type, radius, max-width) drives everything. Every section uses the same eyebrow → short title → content pattern, the same card and chip components, and the same button styles. One stylesheet, no per-section overrides.
 
 **10. How will accessibility be considered?**
 - Semantic landmarks (`header/nav/main/section/footer`), one `h1`, ordered heading levels.
