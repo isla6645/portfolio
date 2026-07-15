@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Basic SEO / identity -->
+  <title>Nadia Islam — Software Engineer · Cloud & Distributed Systems</title>
+  <meta name="description" content="Portfolio of Nadia Islam, a computer science student at Queens College (CUNY) building cloud and distributed-systems projects on AWS: Redis clusters, Hadoop/Spark, Docker and Kubernetes." />
+
+  <!-- Fonts: Bricolage Grotesque (display), Public Sans (body), IBM Plex Mono (metrics/labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Accessibility: lets keyboard users jump past the navigation -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#home">
+        <span class="nav__dot" aria-hidden="true"></span>nadia.islam
+      </a>
+
+      <!-- Hamburger button, only visible on small screens (toggled by JS) -->
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Technical Skills</a></li>
+        <li><a href="#experience" class="nav__link">Work Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li><a href="assets/Nadia_Islam_Resume.pdf" class="nav__link nav__link--cta" download>Resume ↓</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO / HOME ============ -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">// software engineer in training</p>
+          <h1 class="hero__title">Nadia&nbsp;Islam builds<br /><em>clusters, not just code.</em></h1>
+          <p class="hero__lede">
+            Computer science student at Queens College (CUNY) focused on
+            <strong>cloud infrastructure and distributed systems</strong> — deploying,
+            breaking, and benchmarking real clusters on AWS.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View projects</a>
+            <a class="btn btn--ghost" href="assets/Nadia_Islam_Resume.pdf" download>Download resume (PDF)</a>
+          </div>
+          <ul class="hero__links">
+            <li><a href="https://github.com/isla6645" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/nadia-islam100/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Signature element: a live mini-diagram of a 6-node Redis cluster.
+             Mirrors the failover test from my Redis project. JS animates it. -->
+        <figure class="cluster" aria-label="Interactive diagram of a six-node Redis cluster with failover simulation">
+          <svg id="clusterSvg" viewBox="0 0 360 320" role="img" aria-hidden="true">
+            <!-- gossip links drawn by JS -->
+            <g id="clusterLinks"></g>
+            <!-- nodes drawn by JS -->
+            <g id="clusterNodes"></g>
+          </svg>
+          <figcaption class="cluster__status">
+            <span class="cluster__light" id="clusterLight" aria-hidden="true"></span>
+            <output id="clusterStatus" aria-live="polite">cluster ok · 3 masters / 3 replicas · 16,384 slots</output>
+          </figcaption>
+          <button class="btn btn--mono" id="failoverBtn" type="button">$ kill a master — watch failover</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section__inner">
+        <p class="eyebrow">// about</p>
+        <h2 class="section__title">Systems that keep working when things break.</h2>
+        <div class="about__grid">
+          <div class="about__body">
+            <p>
+              I'm a computer science student at Queens College, CUNY (B.S. expected December 2026),
+            working toward a software engineering role. What pulls me in is infrastructure:
+              the unglamorous machinery that decides whether an app survives a bad day. My favorite
+              projects involve standing up multi-node clusters on AWS, generating real load against
+              them, and then deliberately breaking things to measure what happens.
+            </p>
+            <p>
+              Alongside school, I work in operations and tech support across two small businesses —
+              a halal food restaurant group and an independent pharmacy — where I've automated
+              inventory reconciliation with Python and the Google Sheets API, kept POS and delivery
+              integrations running, and prototyped an LLM-powered medication FAQ assistant in a
+              HIPAA-aware environment. Real users, real constraints, no staging environment.
+            </p>
+            <p>
+              I've also spent three years with Girls Who Code as a Mentor Corps mentor, teaching
+              20+ K–12 students to write their first programs.
+            </p>
+          </div>
+          <dl class="about__facts">
+            <div><dt>Focus</dt><dd>Cloud · distributed systems · automation</dd></div>
+            <div><dt>Degree</dt><dd>B.S. Computer Science, Dec 2026</dd></div>
+            <div><dt>Programs</dt><dd>Google G-SWEP '24 · Google CSSI '22</dd></div>
+            <div><dt>Base</dt><dd>Queens, New York</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNICAL SKILLS ============ -->
+    <section class="section section--tint" id="skills">
+      <div class="section__inner">
+        <p class="eyebrow">// technical skills</p>
+        <h2 class="section__title">The toolbox.</h2>
+        <div class="skills__grid">
+          <article class="skillcard">
+            <h3 class="skillcard__title">Languages</h3>
+            <ul class="chips">
+              <li>Java</li><li>C++</li><li>Python</li><li>JavaScript</li>
+              <li>SQL</li><li>HTML</li><li>CSS</li>
+            </ul>
+          </article>
+          <article class="skillcard">
+            <h3 class="skillcard__title">Cloud &amp; DevOps</h3>
+            <ul class="chips">
+              <li>AWS EC2</li><li>S3</li><li>Lambda</li><li>VPC &amp; Security Groups</li>
+              <li>Docker</li><li>Kubernetes</li><li>Git / GitHub</li><li>Linux CLI</li>
+            </ul>
+          </article>
+          <article class="skillcard">
+            <h3 class="skillcard__title">Distributed Systems &amp; Data</h3>
+            <ul class="chips">
+              <li>Hadoop (HDFS, YARN)</li><li>Apache Spark</li><li>PySpark</li>
+              <li>Redis Cluster</li><li>Replication &amp; failover</li><li>Sharding</li>
+            </ul>
+          </article>
+          <article class="skillcard">
+            <h3 class="skillcard__title">Frameworks &amp; APIs</h3>
+            <ul class="chips">
+              <li>Flask</li><li>Node.js</li><li>React</li><li>Discord.js</li>
+              <li>OpenAI API</li><li>Google Sheets API</li><li>REST / JSON</li>
+            </ul>
+          </article>
+          <article class="skillcard skillcard--wide">
+            <h3 class="skillcard__title">Concepts</h3>
+            <ul class="chips">
+              <li>Object-oriented programming</li><li>Data structures &amp; algorithms</li>
+              <li>API integration</li><li>Automation</li>
+              <li>Performance benchmarking</li><li>HIPAA-aware data handling</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="section__inner">
+        <p class="eyebrow">// work experience</p>
+        <h2 class="section__title">Where I've shipped.</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <header class="timeline__head">
+              <h3>Operations &amp; Technical Support Associate</h3>
+              <p class="timeline__meta">Shah's Halal Food · Queens Village, NY · <time>Apr 2025 – Present</time></p>
+            </header>
+            <ul class="timeline__points">
+              <li>Built Python automation on the Google Sheets API to reconcile inventory and aggregate daily sales across multiple locations — <span class="metric">−40% manual data-entry time</span>.</li>
+              <li>Configured and troubleshot POS systems and third-party delivery integrations (Uber Eats, Grubhub, DoorDash) via REST APIs — <span class="metric">99%+ platform uptime</span>.</li>
+              <li>Deployed custom alerting and routing workflows for incoming orders — <span class="metric">−15% order-processing latency</span>.</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <header class="timeline__head">
+              <h3>Pharmacy Technology &amp; Operations Assistant</h3>
+              <p class="timeline__meta">Star Care Pharmacy · Jamaica, NY · <time>Jan 2025 – Present</time></p>
+            </header>
+            <ul class="timeline__points">
+              <li>Supported backend operations on the BestRx pharmacy platform with exposure to HIPAA-compliant systems and secure patient-data workflows.</li>
+              <li>Prototyped an LLM-powered medication FAQ assistant (OpenAI API) translating prescription details, dosing, and side effects into plain language.</li>
+              <li>Identified workflow bottlenecks with pharmacists and proposed AI-driven automation for repetitive admin tasks like prior-authorization follow-ups.</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <header class="timeline__head">
+              <h3>Mentor, Mentor Corps</h3>
+              <p class="timeline__meta">Girls Who Code · <time>Sep 2022 – May 2025</time></p>
+            </header>
+            <ul class="timeline__points">
+              <li>Mentored 20+ K–12 students in programming fundamentals as part of Mentor Corps, alongside membership in the Queens College chapter.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section--tint" id="projects">
+      <div class="section__inner">
+        <p class="eyebrow">// projects — cloud &amp; distributed systems</p>
+        <h2 class="section__title">Built, benchmarked, broken on purpose.</h2>
+
+        <div class="projects">
+          <!-- Featured project: Redis cluster -->
+          <article class="project project--featured">
+            <div class="project__body">
+              <h3 class="project__title">Distributed Redis Cluster with Failover Testing</h3>
+              <p class="project__stack">Python · Redis · AWS EC2 · <time>Apr 2026</time></p>
+              <p>
+                Architected and deployed a 6-node Redis Cluster (3 masters, 3 replicas) across AWS EC2
+                with 16,384 hash slots — VPC security groups, SSH key pairs, and gossip-protocol
+                coordination included. Built a multithreaded Python workload generator (8–10 threads of
+                mixed GET/SET/INCR/DEL), then killed a master mid-workload to document automatic replica
+                promotion, slot reassignment, and throughput degradation.
+              </p>
+              <a class="project__link" href="https://github.com/isla6645/redis-cluster-project" target="_blank" rel="noopener">View repo on GitHub ↗</a>
+            </div>
+            <!-- Benchmarks rendered like a terminal readout — the numbers are the design -->
+            <dl class="benchmarks" aria-label="Benchmark results">
+              <div><dt>throughput</dt><dd>4,023 <span>ops/sec</span></dd></div>
+              <div><dt>avg latency</dt><dd>2.47 <span>ms</span></dd></div>
+              <div><dt>p95 / p99</dt><dd>6.22 / 9.86 <span>ms</span></dd></div>
+              <div><dt>total ops</dt><dd>241K <span>mixed R/W</span></dd></div>
+            </dl>
+          </article>
+
+          <article class="project">
+            <h3 class="project__title">Hadoop &amp; Spark Cluster on AWS EC2</h3>
+            <p class="project__stack">Hadoop · Spark · PySpark · AWS · <time>Apr 2026</time></p>
+            <p>
+              Provisioned a 3-node Hadoop/Spark cluster (1 master, 2 workers) with passwordless SSH,
+              configured HDFS NameNode/DataNodes, and validated cluster health via <code>hdfs fsck</code>
+              and the NameNode Web UI. Ran PySpark jobs for top-20 word-frequency analysis over Project
+              Gutenberg text and a Monte Carlo π estimation across 6 partitions.
+            </p>
+            <a class="project__link" href="https://github.com/isla6645" target="_blank" rel="noopener">GitHub ↗</a>
+          </article>
+
+          <article class="project">
+            <h3 class="project__title">Containerized Flask App with Docker &amp; Kubernetes</h3>
+            <p class="project__stack">Docker · Kubernetes · Minikube · Python · <time>Mar 2026</time></p>
+            <p>
+              Containerized a Python Flask service and deployed it to a Minikube cluster with YAML
+              manifests for Deployment and NodePort Service resources. Demonstrated horizontal scaling
+              (2→4 replicas), zero-downtime rolling updates (v1→v2 via <code>kubectl set image</code>),
+              and load balancing verified by hostname rotation across pods.
+            </p>
+            <a class="project__link" href="https://github.com/isla6645" target="_blank" rel="noopener">GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="section__inner">
+        <p class="eyebrow">// education</p>
+        <h2 class="section__title">Education.</h2>
+        <article class="edu">
+          <header class="edu__head">
+            <h3>B.S. in Computer Science</h3>
+            <p class="timeline__meta">City University of New York, Queens College · <time>Expected Dec 2026</time></p>
+          </header>
+          <div class="edu__cols">
+            <div>
+              <h4 class="edu__label">Relevant coursework</h4>
+              <ul class="chips">
+                <li>OOP (Java &amp; C++)</li><li>Data Structures</li><li>Algorithms</li>
+                <li>Discrete Mathematics</li><li>Discrete Structures</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="edu__label">Honors &amp; programs</h4>
+              <ul class="edu__list">
+                <li>Google × Bastas Software Engineering Program (G-SWEP), Fall 2024</li>
+                <li>Google CS Summer Institute (CSSI), 2022</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="edu__label">Activities</h4>
+              <ul class="edu__list">
+                <li>Girls Who Code — Mentor Corps mentor &amp; Queens College chapter, 2022–2025</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--tint" id="contact">
+      <div class="section__inner section__inner--narrow">
+        <p class="eyebrow">// contact</p>
+        <h2 class="section__title">Let's talk.</h2>
+        <p class="contact__lede">
+          I'm looking for software engineering internships and new-grad roles.
+          Send a message here, or reach me directly at
+          <a href="mailto:islnadia120@gmail.com">islnadia120@gmail.com</a>.
+        </p>
+
+        <!-- Contact form. Validated by js/script.js; submits to Formspree if an
+             endpoint is configured there, otherwise falls back to a mailto: draft. -->
+        <form class="form" id="contactForm" novalidate>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+              <p class="form__error" id="nameError" role="alert"></p>
+            </div>
+            <div class="form__field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <p class="form__error" id="emailError" role="alert"></p>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <p class="form__error" id="messageError" role="alert"></p>
+          </div>
+          <button class="btn btn--primary" type="submit" id="sendBtn">Send message</button>
+          <p class="form__status" id="formStatus" aria-live="polite"></p>
+        </form>
+
+        <ul class="contact__links">
+          <li><a href="https://github.com/isla6645" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/nadia-islam100/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="assets/Nadia_Islam_Resume.pdf" download>Resume (PDF) ↓</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Nadia Islam · Designed &amp; hand-coded in HTML, CSS, and vanilla JavaScript.</p>
+    <a class="footer__top" href="#home">↑ back to top</a>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
