@@ -126,43 +126,7 @@ My existing portfolio at [isla6645.github.io/landingwebsite](https://isla6645.gi
 
 ### Wireframe
 
-```
-┌────────────────────────────────────────────────────────────┐
-│ ● nadia.islam   About Skills Experience Projects  [Resume] │  sticky nav
-├────────────────────────────────────────────────────────────┤
-│  // hi, i'm                          ┌───────────────────┐ │
-│  NADIA                               │   ◉ ─── ◎        │ │
-│  ISLAM_                              │  ◎  cluster  ◉   │ │  hero
-│  Software Engineer · Cloud           │   ◉ ─── ◎        │ │
-│  [View projects] [Download resume]   │ ● cluster ok…     │ │
-│  GitHub ↗  LinkedIn ↗                │ [$ kill a master] │ │
-│                                      └───────────────────┘ │
-├────────────────────────────────────────────────────────────┤
-│  // about                                                  │
-│  ┌ short paragraph ───────────────┐  ┌ facts card ──────┐ │
-├────────────────────────────────────────────────────────────┤
-│  // technical skills                                       │
-│  ┌ Languages ┐ ┌ Cloud & DevOps ┐                          │
-│  ┌ Dist. Sys ┐ ┌ Frameworks    ┐                           │
-│  ┌ Concepts (full width) ──────┐                           │
-├────────────────────────────────────────────────────────────┤
-│  // work experience                                        │
-│  ●─ Role, company, dates + bullets with metrics            │
-├────────────────────────────────────────────────────────────┤
-│  // projects                                               │
-│  ┌ FEATURED: Redis cluster ──────┬─ benchmark box ───────┐ │
-│  ┌ Hadoop & Spark ───────────────────────────────────────┐ │
-│  ┌ Docker & Kubernetes ──────────────────────────────────┐ │
-├────────────────────────────────────────────────────────────┤
-│  // education — degree card                                │
-├────────────────────────────────────────────────────────────┤
-│  // contact — form, email, links, resume                   │
-├────────────────────────────────────────────────────────────┤
-│  © 2026 Nadia Islam                        ↑ back to top   │
-└────────────────────────────────────────────────────────────┘
-
-Mobile: nav collapses to a hamburger and every grid becomes one column.
-```
+![Wireframe](Wireframe.png)
 
 ## 6. Interaction / Functionality
 
