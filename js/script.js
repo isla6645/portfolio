@@ -202,7 +202,7 @@ const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").mat
 (function contactForm() {
   // Create a free form at https://formspree.io, then paste its
   // endpoint here, e.g. "https://formspree.io/f/abcdwxyz".
-  const FORMSPREE_ENDPOINT = "";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbdndaqz";
 
   const form = document.getElementById("contactForm");
   if (!form) return;
