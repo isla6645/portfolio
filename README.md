@@ -3,7 +3,6 @@
 **Live site:** `https://isla6645.github.io/portfolio/`
 **Repo:** `https://github.com/isla6645/portfolio`
 
-A personal portfolio built from scratch with plain HTML, CSS, and JavaScript, hosted on GitHub Pages. It presents my skills, cloud projects, work experience, and education to recruiters.
 
 ## 1. Project Overview
 
